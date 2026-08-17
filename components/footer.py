@@ -1,14 +1,22 @@
 import streamlit as st
+import base64
+import os
+
+def get_base64_image(image_path):
+    if os.path.exists(image_path):
+        with open(image_path, "rb") as img_file:
+            return base64.b64encode(img_file.read()).decode()
+    return ""
 
 def render_footer():
-    st.markdown("""
+    logo_base64 = get_base64_image("assets/logo/svpcet_logo.png")
+    st.markdown(f"""
         <div class="custom-footer">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
                 <div>
                     <h4 class="footer-heading">Institution</h4>
                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
-                        <span style="font-size: 1.5rem; color: var(--secondary);">✦</span>
-                        <span style="font-weight: 700; color: white;">SVPCET</span>
+                        <img src="data:image/png;base64,{logo_base64}" alt="SVPCET Logo" style="height: 40px; margin-right: 10px; background-color: white; padding: 4px; border-radius: 4px;">
                     </div>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">
                         St. Vincent Pallotti College of Engineering and Technology, Nagpur.<br>
