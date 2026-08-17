@@ -36,7 +36,7 @@ Join one of the top engineering institutes. Our transparent admission process en
 
 <div style="background-color: var(--primary); padding: 60px; border-radius: 16px; color: white; text-align: center;">
 <h2 style="color: white; margin-bottom: 20px;">Ready to Apply?</h2>
-<p style="font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto 30px auto;">
+<p style="font-size: 1.1rem; color: #ffffff; max-width: 600px; margin: 0 auto 30px auto;">
 The CAP (Centralized Admission Process) for the academic year 2026-27 is currently ongoing. Please visit the official state portal to register.
 </p>
 <button style="background-color: var(--secondary); color: white; border: none; padding: 16px 32px; font-size: 1.1rem; font-weight: bold; border-radius: 8px; cursor: pointer;">Proceed to Application Portal</button>
