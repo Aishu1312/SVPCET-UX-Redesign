@@ -18,11 +18,9 @@ st.set_page_config(
 load_css("styles/main.css")
 
 # Load Data
-def get_data():
-    with open("data/mock_data.json", "r", encoding="utf-8") as f:
-        return json.load(f)
+from utils import safe_get_data, format_notice_date
 
-data = get_data()
+data = safe_get_data()
 
 # Navbar
 render_navbar()
@@ -80,16 +78,18 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-for notice in data['notices'][:3]:
+for notice in data.get('notices', [])[:3]:
+    date_parts = format_notice_date(notice.get('date', ''))
+    
     st.markdown(f"""
     <div class="notice-item">
         <div class="notice-date-box">
-            <div class="notice-day">{notice['date'].split()[0]}</div>
-            <div class="notice-month">{notice['date'].split()[1][:3]}</div>
+            <div class="notice-day">{date_parts['day']}</div>
+            <div class="notice-month">{date_parts['month']}</div>
         </div>
         <div class="notice-content">
-            <span class="notice-category {notice['category']}">{notice['category']}</span>
-            <h4 class="notice-title">{notice['title']}</h4>
+            <span class="notice-category {notice.get('category', 'Notice')}">{notice.get('category', 'Notice')}</span>
+            <h4 class="notice-title">{notice.get('title', 'Untitled')}</h4>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -109,7 +109,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 cols = st.columns(3)
-for i, program in enumerate(data['programs'][:3]):
+for i, program in enumerate(data.get('programs', [])[:3]):
     with cols[i]:
         render_program_card(program)
 

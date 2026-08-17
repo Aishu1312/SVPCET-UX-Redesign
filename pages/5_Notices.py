@@ -7,11 +7,9 @@ from components.cards import load_css
 st.set_page_config(page_title="Notices | SVPCET", page_icon="✦", layout="wide")
 load_css("styles/main.css")
 
-def get_data():
-    with open("data/mock_data.json", "r", encoding="utf-8") as f:
-        return json.load(f)
+from utils import safe_get_data, format_notice_date
 
-data = get_data()
+data = safe_get_data()
 render_navbar()
 
 st.markdown("""
@@ -46,15 +44,17 @@ if not filtered_notices:
     st.info("No notices available for this category.")
 else:
     for notice in filtered_notices:
+        date_parts = format_notice_date(notice.get('date', ''))
+        
         st.markdown(f"""
         <div class="notice-item" style="margin-bottom: 16px; border-radius: 8px; border: 1px solid var(--border-light); padding: 16px;">
             <div class="notice-date-box">
-                <div class="notice-day">{notice['date'].split()[0]}</div>
-                <div class="notice-month">{notice['date'].split()[1][:3]}</div>
+                <div class="notice-day">{date_parts['day']}</div>
+                <div class="notice-month">{date_parts['month']}</div>
             </div>
             <div class="notice-content">
-                <span class="notice-category {notice['category']}">{notice['category']}</span>
-                <h4 class="notice-title" style="margin-top: 8px;">{notice['title']}</h4>
+                <span class="notice-category {notice.get('category', 'Notice')}">{notice.get('category', 'Notice')}</span>
+                <h4 class="notice-title" style="margin-top: 8px;">{notice.get('title', 'Untitled')}</h4>
             </div>
         </div>
         """, unsafe_allow_html=True)

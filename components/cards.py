@@ -16,23 +16,23 @@ def render_program_card(program):
     """
     st.markdown(html, unsafe_allow_html=True)
 
+from utils import format_notice_date
+
 def render_notice_card(notice):
-    date_obj = datetime.datetime.strptime(notice['date'], '%Y-%m-%d')
-    day = date_obj.strftime('%d')
-    month = date_obj.strftime('%b')
+    date_parts = format_notice_date(notice.get('date', ''))
     
     important_badge = ' <span style="background-color: var(--error); color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; margin-left: 8px;">IMPORTANT</span>' if notice.get('important') else ''
     
     html = f"""
     <div class="notice-item">
         <div class="notice-date-box">
-            <div class="notice-day">{day}</div>
-            <div class="notice-month">{month}</div>
+            <div class="notice-day">{date_parts['day']}</div>
+            <div class="notice-month">{date_parts['month']}</div>
         </div>
         <div class="notice-content">
-            <span class="notice-category {notice['category']}">{notice['category']}</span>
-            <h4 class="notice-title">{notice['title']}{important_badge}</h4>
-            <p class="notice-desc">{notice['description']}</p>
+            <span class="notice-category {notice.get('category', 'Notice')}">{notice.get('category', 'Notice')}</span>
+            <h4 class="notice-title">{notice.get('title', 'Untitled')}{important_badge}</h4>
+            <p class="notice-desc">{notice.get('description', '')}</p>
         </div>
         <div style="display: flex; align-items: center;">
             <a href="/Notices" target="_self" style="font-size: 0.9rem; font-weight: 700; color: var(--primary); background-color: var(--surface-offwhite); padding: 8px 12px; border-radius: 4px;">View Details →</a>

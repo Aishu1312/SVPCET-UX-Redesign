@@ -98,7 +98,6 @@ a:hover {
 
 /* Hide default header/footer/menu to create a clean UI */
 #MainMenu {visibility: hidden;}
-header {visibility: hidden;}
 footer {visibility: hidden;}
 
 /* Remove default Streamlit padding */
@@ -142,8 +141,8 @@ footer {visibility: hidden;}
    CUSTOM COMPONENTS
    ========================================================================== */
 
-/* Header / Navbar */
-.custom-navbar {
+/* Header / Desktop Navbar */
+.desktop-nav-container {
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -161,26 +160,29 @@ footer {visibility: hidden;}
   align-items: center;
 }
 
-.nav-links {
+.nav-links-native {
   display: flex;
-  gap: var(--spacing-lg);
+  width: 100%;
   align-items: center;
 }
 
-.nav-link {
+/* Style the native Streamlit page_link inside our desktop nav */
+.desktop-nav-container [data-testid="stPageLink-NavLink"] {
   font-weight: 600;
   font-size: 0.95rem;
   color: var(--text-main);
-  padding: var(--spacing-sm);
+  padding: var(--spacing-sm) 0;
   position: relative;
+  text-decoration: none;
+  background: transparent !important;
 }
 
-.nav-link:hover {
+.desktop-nav-container [data-testid="stPageLink-NavLink"]:hover {
   color: var(--primary);
 }
 
-/* Active Link Indication */
-.nav-link::after {
+/* Active Link Indication for Desktop */
+.desktop-nav-container [data-testid="stPageLink-NavLink"]::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -190,12 +192,13 @@ footer {visibility: hidden;}
   background-color: var(--secondary);
   transition: width 0.3s ease;
 }
-.nav-link:hover::after {
+.desktop-nav-container [data-testid="stPageLink-NavLink"]:hover::after {
   width: 100%;
 }
 
-.nav-cta {
-  background-color: var(--secondary);
+/* Style the Admissions CTA natively */
+.desktop-nav-container div[data-testid="column"]:last-child [data-testid="stPageLink-NavLink"] {
+  background-color: var(--secondary) !important;
   color: var(--surface-white) !important;
   padding: 10px 24px;
   border-radius: var(--radius-xl);
@@ -206,25 +209,27 @@ footer {visibility: hidden;}
   transition: all 0.2s ease;
   box-shadow: var(--shadow-sm);
 }
-.nav-cta:hover {
-  background-color: var(--secondary-light);
+
+.desktop-nav-container div[data-testid="column"]:last-child [data-testid="stPageLink-NavLink"]:hover {
+  background-color: var(--secondary-light) !important;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+  color: var(--surface-white) !important;
 }
 
-/* Mobile Menu Toggle */
-.mobile-menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--primary);
-  background: none;
-  border: none;
-  padding: 8px;
+/* Responsive Navbar Display Logic */
+/* Hide desktop nav on mobile */
+@media (max-width: 768px) {
+  .desktop-nav-container {
+    display: none !important;
+  }
 }
 
-#mobile-menu-checkbox {
-  display: none;
+/* Hide Streamlit sidebar toggle (hamburger) on desktop */
+@media (min-width: 769px) {
+  [data-testid="collapsedControl"] {
+    display: none !important;
+  }
 }
 
 /* Hero Section */
@@ -391,36 +396,6 @@ footer {visibility: hidden;}
 @media (max-width: 768px) {
   .hero-heading {
     font-size: 2.5rem;
-  }
-  .custom-navbar {
-    padding: var(--spacing-md);
-  }
-  .mobile-menu-toggle {
-    display: block;
-  }
-  
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--surface-white);
-    padding: var(--spacing-md);
-    box-shadow: var(--shadow-md);
-    gap: var(--spacing-md);
-    align-items: flex-start;
-  }
-  
-  #mobile-menu-checkbox:checked ~ .nav-links {
-    display: flex;
-  }
-
-  .nav-link, .nav-cta {
-    width: 100%;
-    text-align: left;
-    display: block;
   }
   
   .section-container {
