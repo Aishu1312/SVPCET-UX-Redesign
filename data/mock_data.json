@@ -1,0 +1,104 @@
+{
+  "programs": [
+    {
+      "id": "cse",
+      "department": "Computer Science & Engineering",
+      "name": "B.Tech in Computer Science & Engineering",
+      "description": "Comprehensive program covering software development, AI, data structures, and computing algorithms.",
+      "duration": "4 Years",
+      "seats": 180,
+      "icon": "💻"
+    },
+    {
+      "id": "it",
+      "department": "Information Technology",
+      "name": "B.Tech in Information Technology",
+      "description": "Focuses on cloud computing, cybersecurity, web technologies, and enterprise solutions.",
+      "duration": "4 Years",
+      "seats": 60,
+      "icon": "🌐"
+    },
+    {
+      "id": "aids",
+      "department": "Artificial Intelligence & Data Science",
+      "name": "B.Tech in Artificial Intelligence & Data Science",
+      "description": "Specialized curriculum on machine learning, big data analytics, and deep learning neural networks.",
+      "duration": "4 Years",
+      "seats": 120,
+      "icon": "🤖"
+    },
+    {
+      "id": "me",
+      "department": "Mechanical Engineering",
+      "name": "B.Tech in Mechanical Engineering",
+      "description": "Core engineering focusing on robotics, thermodynamics, manufacturing, and automotive design.",
+      "duration": "4 Years",
+      "seats": 60,
+      "icon": "⚙️"
+    },
+    {
+      "id": "ce",
+      "department": "Civil Engineering",
+      "name": "B.Tech in Civil Engineering",
+      "description": "Designing and developing infrastructure, structural analysis, and environmental engineering.",
+      "duration": "4 Years",
+      "seats": 60,
+      "icon": "🏗️"
+    },
+    {
+      "id": "etc",
+      "department": "Electronics & Telecommunication",
+      "name": "B.Tech in Electronics & Telecommunication",
+      "description": "Bridging hardware and software through VLSI, IoT, signal processing, and communication systems.",
+      "duration": "4 Years",
+      "seats": 120,
+      "icon": "📡"
+    }
+  ],
+  "notices": [
+    {
+      "id": "n1",
+      "date": "2026-08-15",
+      "category": "Admissions",
+      "title": "B.Tech Admissions 2026-27 Registration Open",
+      "description": "The online registration portal for CAP Round I is now open for prospective students.",
+      "important": true
+    },
+    {
+      "id": "n2",
+      "date": "2026-08-12",
+      "category": "Examination",
+      "title": "Odd Semester End Exam Timetable Released",
+      "description": "Final timetable for 3rd, 5th, and 7th semester examinations available on student portal.",
+      "important": true
+    },
+    {
+      "id": "n3",
+      "date": "2026-08-10",
+      "category": "Academic",
+      "title": "Commencement of Classes for First Year",
+      "description": "Induction program and regular classes for newly admitted first-year students begin on September 1st.",
+      "important": false
+    },
+    {
+      "id": "n4",
+      "date": "2026-08-05",
+      "category": "General",
+      "title": "Campus Placement Drive: Tech Mahindra",
+      "description": "Registration mandatory for eligible final year students. Pre-placement talk at 10 AM.",
+      "important": false
+    }
+  ],
+  "placements": {
+    "highest_package": "12.5 LPA",
+    "average_package": "4.5 LPA",
+    "top_recruiters": ["TCS", "Infosys", "Capgemini", "Cognizant", "Tech Mahindra", "Wipro", "Amazon", "L&T Infotech"],
+    "placement_percentage": "85%"
+  },
+  "stats": {
+    "students": "2500+",
+    "faculty": "150+",
+    "alumni": "5000+",
+    "acres_campus": "15"
+  }
+}
