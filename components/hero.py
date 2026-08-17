@@ -1,53 +1,33 @@
 import streamlit as st
 
 def render_hero():
+    # Hero Top Section (without the CTA link)
     st.markdown("""
         <div class="hero-section">
             <div class="hero-eyebrow">St. Vincent Pallotti College of Engineering & Technology, Nagpur</div>
             <h1 class="hero-heading">Empowering Innovation.<br>Inspiring Excellence.</h1>
             <p class="hero-subtitle">Discover programs designed to prepare students for the future of technology and industry. Transform your potential into professional success at the best engineering college in Maharashtra.</p>
-            <div style="display: flex; gap: 16px; justify-content: center; align-items: center; margin-top: 32px;">
-                <a href="/Admissions" target="_self" style="background-color: var(--secondary); color: var(--surface-white); padding: 14px 28px; border-radius: var(--radius-xl); font-weight: 700; text-decoration: none; box-shadow: var(--shadow-sm); transition: transform 0.2s; text-transform: uppercase;">Admissions Enquiry 2026-27</a>
-            </div>
-        </div>
-        
-        <div class="quick-access-wrapper">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
-                <a href="/Admissions" target="_self" style="text-decoration: none;">
-                    <div class="quick-card">
-                        <div class="quick-icon">🎓</div>
-                        <div class="quick-title">Admissions</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Explore pathways</div>
-                    </div>
-                </a>
-                <a href="/Academics" target="_self" style="text-decoration: none;">
-                    <div class="quick-card">
-                        <div class="quick-icon">📚</div>
-                        <div class="quick-title">Academics</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Explore programs</div>
-                    </div>
-                </a>
-                <a href="/Placements" target="_self" style="text-decoration: none;">
-                    <div class="quick-card">
-                        <div class="quick-icon">💼</div>
-                        <div class="quick-title">Placements</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Career opportunities</div>
-                    </div>
-                </a>
-                <a href="/Notices" target="_self" style="text-decoration: none;">
-                    <div class="quick-card">
-                        <div class="quick-icon">📌</div>
-                        <div class="quick-title">Notices</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Announcements</div>
-                    </div>
-                </a>
-                <a href="/Student_Life" target="_self" style="text-decoration: none;">
-                    <div class="quick-card">
-                        <div class="quick-icon">🌟</div>
-                        <div class="quick-title">Student Life</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Campus resources</div>
-                    </div>
-                </a>
-            </div>
         </div>
     """, unsafe_allow_html=True)
+
+    # Native Streamlit CTA for Admissions
+    st.markdown('<div class="hero-cta-container">', unsafe_allow_html=True)
+    col1, col2, col3 = st.columns([1, 1, 1])
+    with col2:
+        st.page_link("pages/3_Admissions.py", label="Admissions Enquiry 2026-27", icon="🎓")
+    st.markdown('</div>', unsafe_allow_html=True)
+    
+    # Quick Access Section natively with columns
+    st.markdown('<div class="quick-access-wrapper">', unsafe_allow_html=True)
+    q1, q2, q3, q4, q5 = st.columns(5)
+    with q1:
+        st.page_link("pages/3_Admissions.py", label="Admissions", icon="🎓")
+    with q2:
+        st.page_link("pages/2_Academics.py", label="Academics", icon="📚")
+    with q3:
+        st.page_link("pages/4_Placements.py", label="Placements", icon="💼")
+    with q4:
+        st.page_link("pages/5_Notices.py", label="Notices", icon="📌")
+    with q5:
+        st.page_link("pages/6_Student_Life.py", label="Student Life", icon="🌟")
+    st.markdown('</div>', unsafe_allow_html=True)

@@ -94,11 +94,9 @@ for notice in data.get('notices', [])[:3]:
     </div>
     """, unsafe_allow_html=True)
 
-st.markdown("""
-<div style="text-align: center; margin-top: 24px; margin-bottom: 80px;">
-    <a href="/Notices" target="_self" style="display: inline-block; color: var(--primary); font-weight: 700; text-decoration: underline;">View All Notices →</a>
-</div>
-""", unsafe_allow_html=True)
+st.markdown('<div class="centered-link-wrapper">', unsafe_allow_html=True)
+st.page_link("pages/5_Notices.py", label="View All Notices →")
+st.markdown('</div>', unsafe_allow_html=True)
 
 # Academic Programs
 st.markdown("""
@@ -113,29 +111,33 @@ for i, program in enumerate(data.get('programs', [])[:3]):
     with cols[i]:
         render_program_card(program)
 
-st.markdown("""
-<div style="text-align: center; margin-top: 32px;">
-    <a href="/Academics" target="_self" style="display: inline-block; background-color: var(--primary); color: white; padding: 12px 24px; border-radius: 8px; font-weight: 700; text-decoration: none;">View All Programs</a>
-</div>
-""", unsafe_allow_html=True)
+st.markdown('<div class="centered-button-wrapper">', unsafe_allow_html=True)
+st.page_link("pages/2_Academics.py", label="View All Programs")
+st.markdown('</div>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
 
 # Admissions CTA Section
-st.markdown("""
-<div class="section-container bg-light" style="margin-top: 64px;">
-    <div style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-        <div>
-            <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Start Your Journey at SVPCET</h2>
-            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 24px;">Join a community of innovators, leaders, and problem solvers. Our admission process for the 2026-27 academic year is now open.</p>
-            <ul style="list-style-type: none; padding: 0; margin-bottom: 32px;">
-                <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;"><span style="color: var(--success); font-weight: bold;">✓</span> Explore Programs</li>
-                <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;"><span style="color: var(--success); font-weight: bold;">✓</span> Check Eligibility</li>
-                <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;"><span style="color: var(--success); font-weight: bold;">✓</span> Understand Admission Process</li>
-                <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;"><span style="color: var(--success); font-weight: bold;">✓</span> Apply Online</li>
-            </ul>
-            <a href="/Admissions" target="_self" style="display: inline-block; background-color: var(--secondary); color: white; padding: 14px 28px; border-radius: 8px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Admissions Enquiry</a>
-        </div>
-        <div style="background-color: var(--primary); border-radius: 16px; padding: 40px; color: white; text-align: center;">
+st.markdown('<div class="section-container bg-light" style="margin-top: 64px;">', unsafe_allow_html=True)
+st.markdown('<div class="admissions-cta-grid">', unsafe_allow_html=True)
+
+cta_col1, cta_col2 = st.columns(2)
+
+with cta_col1:
+    st.markdown("""
+        <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Start Your Journey at SVPCET</h2>
+        <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 24px;">Join a community of innovators, leaders, and problem solvers. Our admission process for the 2026-27 academic year is now open.</p>
+        <ul style="list-style-type: none; padding: 0; margin-bottom: 32px;">
+            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;"><span style="color: var(--success); font-weight: bold;">✓</span> Explore Programs</li>
+            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;"><span style="color: var(--success); font-weight: bold;">✓</span> Check Eligibility</li>
+            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;"><span style="color: var(--success); font-weight: bold;">✓</span> Understand Admission Process</li>
+            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;"><span style="color: var(--success); font-weight: bold;">✓</span> Apply Online</li>
+        </ul>
+    """, unsafe_allow_html=True)
+    st.page_link("pages/3_Admissions.py", label="Admissions Enquiry")
+
+with cta_col2:
+    st.markdown("""
+        <div style="background-color: var(--primary); border-radius: 16px; padding: 40px; color: white; text-align: center; height: 100%;">
             <div style="font-size: 3rem; margin-bottom: 16px;">🎓</div>
             <h3 style="color: white;">Admissions 2026-27</h3>
             <p style="color: rgba(255,255,255,0.8); margin-bottom: 24px;">Registration for First Year B.Tech is now open through CAP Round I.</p>
@@ -144,8 +146,8 @@ st.markdown("""
                 <a href="https://cetcell.mahacet.org/" target="_blank" style="color: var(--secondary-light); text-decoration: underline;">Official State Portal</a>
             </div>
         </div>
-    </div>
-</div>
-""", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
+
+st.markdown('</div></div>', unsafe_allow_html=True)
 
 render_footer()

@@ -408,3 +408,167 @@ footer {visibility: hidden;}
     text-align: center;
   }
 }
+
+/* --- Streamlit Native Link Overrides --- */
+
+/* Hero Top CTA */
+.hero-cta-container [data-testid="stPageLink-NavLink"] {
+    background-color: var(--secondary);
+    color: var(--surface-white);
+    padding: 14px 28px;
+    border-radius: var(--radius-xl);
+    font-weight: 700;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s;
+    text-transform: uppercase;
+    display: inline-flex;
+    justify-content: center;
+}
+.hero-cta-container [data-testid="stPageLink-NavLink"]:hover {
+    transform: translateY(-2px);
+    background-color: #f59e0b;
+}
+
+/* Quick Access Cards */
+.quick-access-wrapper [data-testid="stPageLink-NavLink"] {
+    background: var(--surface-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+.quick-access-wrapper [data-testid="stPageLink-NavLink"]:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+}
+.quick-access-wrapper [data-testid="stPageLink-NavLink"] p {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+}
+.quick-access-wrapper [data-testid="stIconMaterial"] {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+/* Footer Links */
+.custom-footer [data-testid="stPageLink-NavLink"] {
+    background: transparent !important;
+    padding: 0 !important;
+    margin-bottom: 12px;
+}
+.custom-footer [data-testid="stPageLink-NavLink"] p {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.2s;
+    font-size: 0.95rem;
+}
+.custom-footer [data-testid="stPageLink-NavLink"]:hover p {
+    color: white;
+}
+
+/* Centered Button Wrapper (View All Programs) */
+.centered-button-wrapper {
+    text-align: center;
+    margin-top: 32px;
+}
+.centered-button-wrapper [data-testid="stPageLink-NavLink"] {
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    display: inline-flex;
+}
+.centered-button-wrapper [data-testid="stPageLink-NavLink"]:hover {
+    background-color: var(--primary-light);
+}
+
+/* Centered Link Wrapper (View All Notices) */
+.centered-link-wrapper {
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 80px;
+}
+.centered-link-wrapper [data-testid="stPageLink-NavLink"] {
+    background: transparent !important;
+    display: inline-flex;
+}
+.centered-link-wrapper [data-testid="stPageLink-NavLink"] p {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* Admissions CTA Grid Link */
+.admissions-cta-grid [data-testid="stPageLink-NavLink"] {
+    background-color: var(--secondary);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-flex;
+}
+.admissions-cta-grid [data-testid="stPageLink-NavLink"]:hover {
+    background-color: #f59e0b;
+}
+
+/* Program Card Links */
+.program-card-content {
+    background-color: var(--surface-white);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: var(--spacing-lg) var(--spacing-lg) 0 var(--spacing-lg);
+    border: 1px solid var(--border-light);
+    border-bottom: none;
+}
+.program-card-content + div [data-testid="stPageLink-NavLink"] {
+    background-color: var(--surface-white);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    padding: 0 var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
+    border: 1px solid var(--border-light);
+    border-top: none;
+    display: flex;
+    justify-content: flex-end;
+}
+.program-card-content + div [data-testid="stPageLink-NavLink"] p {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Notice Item Content Links */
+.notice-item-content {
+    display: flex;
+    gap: 20px;
+    padding: var(--spacing-lg);
+    background: var(--surface-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-bottom: none;
+}
+.notice-item-content + div [data-testid="stPageLink-NavLink"] {
+    background-color: var(--surface-white);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    padding: 0 var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
+    border: 1px solid var(--border-light);
+    border-top: none;
+    display: flex;
+    justify-content: flex-end;
+}
+.notice-item-content + div [data-testid="stPageLink-NavLink"] p {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary);
+    background-color: var(--surface-offwhite);
+    padding: 8px 12px;
+    border-radius: 4px;
+}

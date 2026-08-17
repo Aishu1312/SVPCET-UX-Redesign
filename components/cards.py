@@ -1,30 +1,24 @@
 import streamlit as st
-import datetime
+from utils import format_notice_date
 
 def render_program_card(program):
-    html = f"""
-    <div class="program-card">
+    st.markdown(f"""
+    <div class="program-card-content">
         <div class="program-icon">{program['icon']}</div>
         <div class="program-dept">{program['department']}</div>
         <h3 class="program-title">{program['name']}</h3>
         <p class="program-desc">{program['description']}</p>
-        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 12px; margin-top: 16px;">
-            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">⏱ {program['duration']} | 👥 {program['seats']} Seats</span>
-            <a href="/Admissions" target="_self" style="font-size: 0.85rem; font-weight: 700; color: var(--primary);">Learn More →</a>
-        </div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; padding-bottom: 8px;">⏱ {program['duration']} | 👥 {program['seats']} Seats</div>
     </div>
-    """
-    st.markdown(html, unsafe_allow_html=True)
-
-from utils import format_notice_date
+    """, unsafe_allow_html=True)
+    st.page_link("pages/3_Admissions.py", label="Learn More →")
 
 def render_notice_card(notice):
     date_parts = format_notice_date(notice.get('date', ''))
-    
     important_badge = ' <span style="background-color: var(--error); color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; margin-left: 8px;">IMPORTANT</span>' if notice.get('important') else ''
     
-    html = f"""
-    <div class="notice-item">
+    st.markdown(f"""
+    <div class="notice-item-content">
         <div class="notice-date-box">
             <div class="notice-day">{date_parts['day']}</div>
             <div class="notice-month">{date_parts['month']}</div>
@@ -34,12 +28,9 @@ def render_notice_card(notice):
             <h4 class="notice-title">{notice.get('title', 'Untitled')}{important_badge}</h4>
             <p class="notice-desc">{notice.get('description', '')}</p>
         </div>
-        <div style="display: flex; align-items: center;">
-            <a href="/Notices" target="_self" style="font-size: 0.9rem; font-weight: 700; color: var(--primary); background-color: var(--surface-offwhite); padding: 8px 12px; border-radius: 4px;">View Details →</a>
-        </div>
     </div>
-    """
-    st.markdown(html, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
+    st.page_link("pages/5_Notices.py", label="View Details →")
 
 def load_css(file_path):
     with open(file_path, "r") as f:
