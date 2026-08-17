@@ -9,31 +9,31 @@ render_navbar()
 
 st.markdown("""
 <div class="section-container">
-    <div class="section-header">
-        <h1 style="font-size: 3rem;">UX Research & Evaluation</h1>
-        <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+<div class="section-header">
+<h1 style="font-size: 3rem;">UX Research & Evaluation</h1>
+<p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
             This interactive dashboard details the 10 major usability issues identified in the original SVPCET website and the design rationale behind their resolution in this prototype.
-        </p>
-    </div>
+</p>
+</div>
     
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 40px; text-align: center;">
-        <div style="background-color: var(--surface-offwhite); padding: 20px; border-radius: 12px; border-bottom: 4px solid var(--primary);">
-            <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">10</div>
-            <div style="font-weight: bold; color: var(--text-muted);">Total Issues</div>
-        </div>
-        <div style="background-color: var(--surface-offwhite); padding: 20px; border-radius: 12px; border-bottom: 4px solid var(--error);">
-            <div style="font-size: 2.5rem; font-weight: 800; color: var(--error);">4</div>
-            <div style="font-weight: bold; color: var(--text-muted);">High Severity</div>
-        </div>
-        <div style="background-color: var(--surface-offwhite); padding: 20px; border-radius: 12px; border-bottom: 4px solid var(--warning);">
-            <div style="font-size: 2.5rem; font-weight: 800; color: var(--warning);">4</div>
-            <div style="font-weight: bold; color: var(--text-muted);">Medium Severity</div>
-        </div>
-        <div style="background-color: var(--surface-offwhite); padding: 20px; border-radius: 12px; border-bottom: 4px solid var(--success);">
-            <div style="font-size: 2.5rem; font-weight: 800; color: var(--success);">2</div>
-            <div style="font-weight: bold; color: var(--text-muted);">Low Severity</div>
-        </div>
-    </div>
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 40px; text-align: center;">
+<div style="background-color: var(--surface-offwhite); padding: 20px; border-radius: 12px; border-bottom: 4px solid var(--primary);">
+<div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">10</div>
+<div style="font-weight: bold; color: var(--text-muted);">Total Issues</div>
+</div>
+<div style="background-color: var(--surface-offwhite); padding: 20px; border-radius: 12px; border-bottom: 4px solid var(--error);">
+<div style="font-size: 2.5rem; font-weight: 800; color: var(--error);">4</div>
+<div style="font-weight: bold; color: var(--text-muted);">High Severity</div>
+</div>
+<div style="background-color: var(--surface-offwhite); padding: 20px; border-radius: 12px; border-bottom: 4px solid var(--warning);">
+<div style="font-size: 2.5rem; font-weight: 800; color: var(--warning);">4</div>
+<div style="font-weight: bold; color: var(--text-muted);">Medium Severity</div>
+</div>
+<div style="background-color: var(--surface-offwhite); padding: 20px; border-radius: 12px; border-bottom: 4px solid var(--success);">
+<div style="font-size: 2.5rem; font-weight: 800; color: var(--success);">2</div>
+<div style="font-weight: bold; color: var(--text-muted);">Low Severity</div>
+</div>
+</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -56,28 +56,28 @@ for issue in ux_issues:
     sev_color = "var(--error)" if issue['severity'] == "High" else "var(--warning)" if issue['severity'] == "Medium" else "var(--success)"
     
     st.markdown(f"""
-    <div style="background-color: white; border: 1px solid var(--border-light); border-radius: 12px; padding: 30px; margin-bottom: 24px; box-shadow: var(--shadow-sm);">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-light); padding-bottom: 16px; margin-bottom: 20px;">
-            <div style="display: flex; align-items: center; gap: 16px;">
-                <span style="background-color: var(--primary); color: white; padding: 6px 12px; border-radius: 8px; font-weight: bold; font-family: 'Outfit', sans-serif;">{issue['id']}</span>
-                <h3 style="margin: 0; color: var(--primary);">{issue['title']}</h3>
-            </div>
-            <span style="background-color: {sev_color}; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">{issue['severity']} Severity</span>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-            <div>
-                <strong style="color: var(--text-muted); text-transform: uppercase; font-size: 0.85rem;">Principle violated</strong>
-                <p style="font-weight: 600; color: var(--error); margin-top: 4px;">{issue['principle']}</p>
+<div style="background-color: white; border: 1px solid var(--border-light); border-radius: 12px; padding: 30px; margin-bottom: 24px; box-shadow: var(--shadow-sm);">
+<div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-light); padding-bottom: 16px; margin-bottom: 20px;">
+<div style="display: flex; align-items: center; gap: 16px;">
+<span style="background-color: var(--primary); color: white; padding: 6px 12px; border-radius: 8px; font-weight: bold; font-family: 'Outfit', sans-serif;">{issue['id']}</span>
+<h3 style="margin: 0; color: var(--primary);">{issue['title']}</h3>
+</div>
+<span style="background-color: {sev_color}; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">{issue['severity']} Severity</span>
+</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+<div>
+<strong style="color: var(--text-muted); text-transform: uppercase; font-size: 0.85rem;">Principle violated</strong>
+<p style="font-weight: 600; color: var(--error); margin-top: 4px;">{issue['principle']}</p>
                 
-                <strong style="color: var(--text-muted); text-transform: uppercase; font-size: 0.85rem;">Existing Problem</strong>
-                <p style="color: var(--text-main); margin-top: 4px;">{issue['problem']}</p>
-            </div>
-            <div style="background-color: var(--surface-offwhite); padding: 20px; border-radius: 8px; border-left: 4px solid var(--success);">
-                <strong style="color: var(--text-muted); text-transform: uppercase; font-size: 0.85rem;">Prototype Solution</strong>
-                <p style="color: var(--text-main); margin-top: 4px;">{issue['solution']}</p>
-            </div>
-        </div>
-    </div>
+<strong style="color: var(--text-muted); text-transform: uppercase; font-size: 0.85rem;">Existing Problem</strong>
+<p style="color: var(--text-main); margin-top: 4px;">{issue['problem']}</p>
+</div>
+<div style="background-color: var(--surface-offwhite); padding: 20px; border-radius: 8px; border-left: 4px solid var(--success);">
+<strong style="color: var(--text-muted); text-transform: uppercase; font-size: 0.85rem;">Prototype Solution</strong>
+<p style="color: var(--text-main); margin-top: 4px;">{issue['solution']}</p>
+</div>
+</div>
+</div>
     """, unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)

@@ -9,12 +9,12 @@ render_navbar()
 
 st.markdown("""
 <div class="section-container">
-    <div class="section-header">
-        <h1 style="font-size: 3rem;">Student Life at SVPCET</h1>
-        <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+<div class="section-header">
+<h1 style="font-size: 3rem;">Student Life at SVPCET</h1>
+<p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
             Experience a vibrant campus life filled with technical clubs, cultural fests, sports, and holistic development activities.
-        </p>
-    </div>
+</p>
+</div>
     
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
 <div style="background-color: var(--surface-offwhite); padding: 40px; border-radius: 16px;">

@@ -16,12 +16,12 @@ render_navbar()
 
 st.markdown("""
 <div class="section-container">
-    <div class="section-header">
-        <h1 style="font-size: 3rem;">Official Notices</h1>
-        <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+<div class="section-header">
+<h1 style="font-size: 3rem;">Official Notices</h1>
+<p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
             Stay updated with the latest announcements regarding academics, admissions, and examinations.
-        </p>
-    </div>
+</p>
+</div>
 </div>
 """, unsafe_allow_html=True)
 

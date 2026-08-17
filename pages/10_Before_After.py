@@ -9,12 +9,12 @@ render_navbar()
 
 st.markdown("""
 <div class="section-container">
-    <div class="section-header">
-        <h1 style="font-size: 3rem;">UX Case Study: Before & After</h1>
-        <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+<div class="section-header">
+<h1 style="font-size: 3rem;">UX Case Study: Before & After</h1>
+<p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
             A visual breakdown of the design decisions made during the redesign process.
-        </p>
-    </div>
+</p>
+</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -53,31 +53,31 @@ comparisons = [
 
 for comp in comparisons:
     st.markdown(f"""
-    <div style="margin-bottom: 60px;">
-        <h2 style="color: var(--primary); margin-bottom: 24px; font-size: 2rem;">{comp['component']}</h2>
+<div style="margin-bottom: 60px;">
+<h2 style="color: var(--primary); margin-bottom: 24px; font-size: 2rem;">{comp['component']}</h2>
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-            <!-- BEFORE -->
-            <div style="background-color: var(--surface-offwhite); border: 2px dashed #ccc; padding: 30px; border-radius: 12px; position: relative;">
-                <span style="position: absolute; top: -15px; left: 20px; background-color: var(--text-muted); color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 0.8rem;">BEFORE</span>
-                <p style="color: var(--text-main); font-style: italic; margin-top: 10px;">"{comp['before']}"</p>
-            </div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+<!-- BEFORE -->
+<div style="background-color: var(--surface-offwhite); border: 2px dashed #ccc; padding: 30px; border-radius: 12px; position: relative;">
+<span style="position: absolute; top: -15px; left: 20px; background-color: var(--text-muted); color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 0.8rem;">BEFORE</span>
+<p style="color: var(--text-main); font-style: italic; margin-top: 10px;">"{comp['before']}"</p>
+</div>
             
-            <!-- AFTER -->
-            <div style="background-color: white; border: 2px solid var(--primary); padding: 30px; border-radius: 12px; position: relative; box-shadow: var(--shadow-sm);">
-                <span style="position: absolute; top: -15px; left: 20px; background-color: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 0.8rem;">AFTER</span>
-                <p style="color: var(--text-main); margin-top: 10px;">{comp['after']}</p>
-            </div>
-        </div>
+<!-- AFTER -->
+<div style="background-color: white; border: 2px solid var(--primary); padding: 30px; border-radius: 12px; position: relative; box-shadow: var(--shadow-sm);">
+<span style="position: absolute; top: -15px; left: 20px; background-color: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 0.8rem;">AFTER</span>
+<p style="color: var(--text-main); margin-top: 10px;">{comp['after']}</p>
+</div>
+</div>
         
-        <div style="margin-top: 30px; background-color: var(--surface-offwhite); padding: 24px; border-radius: 12px; border-left: 4px solid var(--secondary);">
-            <strong style="color: var(--primary); font-size: 0.9rem; text-transform: uppercase;">Design Decision</strong>
-            <p style="margin: 4px 0 16px 0;">{comp['decision']}</p>
+<div style="margin-top: 30px; background-color: var(--surface-offwhite); padding: 24px; border-radius: 12px; border-left: 4px solid var(--secondary);">
+<strong style="color: var(--primary); font-size: 0.9rem; text-transform: uppercase;">Design Decision</strong>
+<p style="margin: 4px 0 16px 0;">{comp['decision']}</p>
             
-            <strong style="color: var(--primary); font-size: 0.9rem; text-transform: uppercase;">User Benefit</strong>
-            <p style="margin: 4px 0 0 0; color: var(--success); font-weight: bold;">✓ {comp['benefit']}</p>
-        </div>
-    </div>
+<strong style="color: var(--primary); font-size: 0.9rem; text-transform: uppercase;">User Benefit</strong>
+<p style="margin: 4px 0 0 0; color: var(--success); font-weight: bold;">✓ {comp['benefit']}</p>
+</div>
+</div>
     """, unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)

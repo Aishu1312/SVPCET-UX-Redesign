@@ -10,12 +10,12 @@ render_navbar()
 
 st.markdown("""
 <div class="section-container">
-    <div class="section-header">
-        <h1 style="font-size: 3rem;">Contact SVPCET</h1>
-        <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+<div class="section-header">
+<h1 style="font-size: 3rem;">Contact SVPCET</h1>
+<p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
             We'd love to hear from you. Get in touch for admissions, general inquiries, or campus visits.
-        </p>
-    </div>
+</p>
+</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -23,23 +23,23 @@ cols = st.columns([1, 1])
 
 with cols[0]:
     st.markdown("""
-    <div style="background-color: var(--surface-offwhite); padding: 40px; border-radius: 16px; height: 100%;">
-        <h3 style="color: var(--primary); margin-bottom: 24px;">Institution Details</h3>
-        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main);">
-            <strong>📍 Address:</strong><br>
+<div style="background-color: var(--surface-offwhite); padding: 40px; border-radius: 16px; height: 100%;">
+<h3 style="color: var(--primary); margin-bottom: 24px;">Institution Details</h3>
+<p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main);">
+<strong>📍 Address:</strong><br>
             St. Vincent Pallotti College of Engineering & Technology,<br>
             Gavsi Shabapur, Wardha Road,<br>
             Nagpur, Maharashtra 441108
-        </p>
-        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main); margin-top: 20px;">
-            <strong>📞 Phone:</strong><br>
+</p>
+<p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main); margin-top: 20px;">
+<strong>📞 Phone:</strong><br>
             +91-XXXXXXXXXX
-        </p>
-        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main); margin-top: 20px;">
-            <strong>✉️ Email:</strong><br>
+</p>
+<p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main); margin-top: 20px;">
+<strong>✉️ Email:</strong><br>
             info@stvincentngp.edu.in
-        </p>
-    </div>
+</p>
+</div>
     """, unsafe_allow_html=True)
 
 with cols[1]:
