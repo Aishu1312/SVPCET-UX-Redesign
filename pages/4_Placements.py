@@ -16,37 +16,42 @@ render_navbar()
 
 st.markdown("""
 <div class="section-container">
-<div class="section-header">
-<h1 style="font-size: 3rem;">Training & Placement Cell</h1>
-<p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+    <div class="section-header">
+        <h1 style="font-size: 3.5rem; margin-bottom: 16px;">Career Development & Placements</h1>
+        <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
             Bridging the gap between academic excellence and industry requirements. Our dedicated cell ensures top-tier opportunities for all students.
-</p>
-</div>
+        </p>
+    </div>
     
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 40px 0;">
-<div style="background-color: var(--surface-offwhite); padding: 30px; border-radius: 12px; text-align: center; border-bottom: 4px solid var(--primary);">
-<div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">{highest}</div>
-<div style="font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Highest Package</div>
-</div>
-<div style="background-color: var(--surface-offwhite); padding: 30px; border-radius: 12px; text-align: center; border-bottom: 4px solid var(--secondary);">
-<div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">{avg}</div>
-<div style="font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Average Package</div>
-</div>
-<div style="background-color: var(--surface-offwhite); padding: 30px; border-radius: 12px; text-align: center; border-bottom: 4px solid var(--success);">
-<div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">{perc}</div>
-<div style="font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Placement Record</div>
-</div>
-</div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin: 40px 0;">
+        <div style="background-color: var(--surface-white); padding: 40px; border-radius: var(--radius-lg); text-align: center; border-bottom: 6px solid var(--primary); box-shadow: var(--shadow-md); transition: transform 0.3s; cursor: default;">
+            <div style="font-size: 3.5rem; font-weight: 800; color: var(--primary); font-family: 'Outfit', sans-serif;">{highest}</div>
+            <div style="font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 8px;">Highest Package</div>
+        </div>
+        <div style="background-color: var(--surface-white); padding: 40px; border-radius: var(--radius-lg); text-align: center; border-bottom: 6px solid var(--secondary); box-shadow: var(--shadow-md); transition: transform 0.3s; cursor: default;">
+            <div style="font-size: 3.5rem; font-weight: 800; color: var(--primary); font-family: 'Outfit', sans-serif;">{avg}</div>
+            <div style="font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 8px;">Average Package</div>
+        </div>
+        <div style="background-color: var(--surface-white); padding: 40px; border-radius: var(--radius-lg); text-align: center; border-bottom: 6px solid var(--success); box-shadow: var(--shadow-md); transition: transform 0.3s; cursor: default;">
+            <div style="font-size: 3.5rem; font-weight: 800; color: var(--primary); font-family: 'Outfit', sans-serif;">{perc}</div>
+            <div style="font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 8px;">Placement Record</div>
+        </div>
+    </div>
 
-<h3 style="margin-top: 60px; color: var(--primary); text-align: center;">Top Recruiters</h3>
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
+    <div style="margin-top: 80px;">
+        <h2 style="color: var(--primary); text-align: center; margin-bottom: 40px; font-size: 2.5rem;">Top Recruiters</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
 """.format(highest=data['placements']['highest_package'], avg=data['placements']['average_package'], perc=data['placements']['placement_percentage']), unsafe_allow_html=True)
 
 html = ""
 for recruiter in data['placements']['top_recruiters']:
-    html += f'<div style="background-color: white; border: 1px solid var(--border-light); padding: 15px 30px; border-radius: 8px; font-weight: bold; color: var(--text-main); box-shadow: var(--shadow-sm);">{recruiter}</div>'
+    html += f'<div style="background-color: var(--surface-offwhite); border: 1px solid var(--border-light); padding: 20px 40px; border-radius: var(--radius-md); font-weight: bold; font-size: 1.1rem; color: var(--text-main); transition: background-color 0.2s;">{recruiter}</div>'
+
+html += """
+        </div>
+    </div>
+</div>
+"""
 
 st.markdown(html, unsafe_allow_html=True)
-st.markdown('</div>', unsafe_allow_html=True)
-
 render_footer()

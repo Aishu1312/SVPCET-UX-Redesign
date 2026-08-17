@@ -53,6 +53,33 @@
       "duration": "4 Years",
       "seats": 120,
       "icon": "📡"
+    },
+    {
+      "id": "mtech-cse",
+      "department": "Computer Science Engineering",
+      "name": "M.Tech in CSE (Big Data Analytics)",
+      "description": "Advanced program focusing on Big Data, Machine Learning, and complex data architectures.",
+      "duration": "2 Years",
+      "seats": 18,
+      "icon": "📊"
+    },
+    {
+      "id": "bba",
+      "department": "Management Courses",
+      "name": "Bachelor of Business Administration (BBA)",
+      "description": "Develop leadership, entrepreneurship, and core business management skills.",
+      "duration": "3 Years",
+      "seats": 120,
+      "icon": "📈"
+    },
+    {
+      "id": "mca",
+      "department": "Computer Application Courses",
+      "name": "Master of Computer Application (MCA)",
+      "description": "Advanced software development, systems engineering, and IT applications.",
+      "duration": "2 Years",
+      "seats": 60,
+      "icon": "💻"
     }
   ],
   "notices": [

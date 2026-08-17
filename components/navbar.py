@@ -13,16 +13,20 @@ def render_navbar():
     st.markdown(f"""
         <div class="custom-navbar">
             <div class="nav-brand">
-                <img src="data:image/png;base64,{logo_base64}" alt="SVPCET Logo" style="height: 40px; margin-right: 10px;">
+                <img src="data:image/png;base64,{logo_base64}" alt="SVPCET Logo" style="height: 48px; margin-right: 10px;">
             </div>
+            
+            <input type="checkbox" id="mobile-menu-checkbox">
+            <label for="mobile-menu-checkbox" class="mobile-menu-toggle">☰</label>
+            
             <div class="nav-links">
                 <a href="/" target="_self" class="nav-link">Home</a>
-                <a href="/About" target="_self" class="nav-link">About</a>
+                <a href="/About" target="_self" class="nav-link">About Us</a>
                 <a href="/Academics" target="_self" class="nav-link">Academics</a>
                 <a href="/Placements" target="_self" class="nav-link">Placements</a>
                 <a href="/Student_Life" target="_self" class="nav-link">Student Life</a>
                 <a href="/Notices" target="_self" class="nav-link">Notices</a>
-                <a href="/Admissions" target="_self" class="nav-cta">Admissions 2026</a>
+                <a href="/Admissions" target="_self" class="nav-cta">Admission Enquiry</a>
             </div>
         </div>
     """, unsafe_allow_html=True)

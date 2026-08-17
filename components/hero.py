@@ -3,12 +3,11 @@ import streamlit as st
 def render_hero():
     st.markdown("""
         <div class="hero-section">
-            <div class="hero-eyebrow">ST. VINCENT PALLOTTI COLLEGE OF ENGINEERING & TECHNOLOGY</div>
-            <h1 class="hero-heading">Engineering Excellence.<br>Innovation. Leadership.</h1>
-            <p class="hero-subtitle">Discover programs designed to prepare students for the future of technology and industry. Transform your potential into professional success.</p>
+            <div class="hero-eyebrow">St. Vincent Pallotti College of Engineering & Technology, Nagpur</div>
+            <h1 class="hero-heading">Empowering Innovation.<br>Inspiring Excellence.</h1>
+            <p class="hero-subtitle">Discover programs designed to prepare students for the future of technology and industry. Transform your potential into professional success at the best engineering college in Maharashtra.</p>
             <div style="display: flex; gap: 16px; justify-content: center; align-items: center; margin-top: 32px;">
-                <a href="/Academics" target="_self" style="background-color: var(--surface-white); color: var(--primary); padding: 12px 24px; border-radius: var(--radius-md); font-weight: 700; text-decoration: none; box-shadow: var(--shadow-sm); transition: transform 0.2s;">Explore Programs</a>
-                <a href="/Admissions" target="_self" style="background-color: transparent; color: var(--surface-white); padding: 12px 24px; border-radius: var(--radius-md); font-weight: 700; text-decoration: none; border: 2px solid var(--surface-white); transition: background-color 0.2s;">Admissions 2026</a>
+                <a href="/Admissions" target="_self" style="background-color: var(--secondary); color: var(--surface-white); padding: 14px 28px; border-radius: var(--radius-xl); font-weight: 700; text-decoration: none; box-shadow: var(--shadow-sm); transition: transform 0.2s; text-transform: uppercase;">Admissions Enquiry 2026-27</a>
             </div>
         </div>
         
