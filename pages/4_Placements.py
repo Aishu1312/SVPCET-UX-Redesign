@@ -23,23 +23,23 @@ st.markdown("""
         </p>
     </div>
     
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 40px 0;">
-        <div style="background-color: var(--surface-offwhite); padding: 30px; border-radius: 12px; text-align: center; border-bottom: 4px solid var(--primary);">
-            <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">{highest}</div>
-            <div style="font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Highest Package</div>
-        </div>
-        <div style="background-color: var(--surface-offwhite); padding: 30px; border-radius: 12px; text-align: center; border-bottom: 4px solid var(--secondary);">
-            <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">{avg}</div>
-            <div style="font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Average Package</div>
-        </div>
-        <div style="background-color: var(--surface-offwhite); padding: 30px; border-radius: 12px; text-align: center; border-bottom: 4px solid var(--success);">
-            <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">{perc}</div>
-            <div style="font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Placement Record</div>
-        </div>
-    </div>
-    
-    <h3 style="margin-top: 60px; color: var(--primary); text-align: center;">Top Recruiters</h3>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 40px 0;">
+<div style="background-color: var(--surface-offwhite); padding: 30px; border-radius: 12px; text-align: center; border-bottom: 4px solid var(--primary);">
+<div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">{highest}</div>
+<div style="font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Highest Package</div>
+</div>
+<div style="background-color: var(--surface-offwhite); padding: 30px; border-radius: 12px; text-align: center; border-bottom: 4px solid var(--secondary);">
+<div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">{avg}</div>
+<div style="font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Average Package</div>
+</div>
+<div style="background-color: var(--surface-offwhite); padding: 30px; border-radius: 12px; text-align: center; border-bottom: 4px solid var(--success);">
+<div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">{perc}</div>
+<div style="font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Placement Record</div>
+</div>
+</div>
+
+<h3 style="margin-top: 60px; color: var(--primary); text-align: center;">Top Recruiters</h3>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
 """.format(highest=data['placements']['highest_package'], avg=data['placements']['average_package'], perc=data['placements']['placement_percentage']), unsafe_allow_html=True)
 
 html = ""
